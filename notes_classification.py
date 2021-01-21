@@ -10,6 +10,12 @@ Original file is located at
 from google.colab import drive
 drive.mount('/content/drive')
 
+
+from PIL import _imaging
+from PIL import Image
+import PIL
+import numpy as np
+from glob import glob
 from tensorflow.keras.layers import Input, Lambda, Dense, Flatten
 from tensorflow.keras.models import Model
 from tensorflow.keras.preprocessing import image
@@ -17,9 +23,9 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator,load_img
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import MaxPooling2D
 from tensorflow.keras.layers import Conv2D
-
-import numpy as np
-from glob import glob
+from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing import image
 
 train_dir='/content/drive/MyDrive/outputimg/train'
 test_dir='/content/drive/MyDrive/outputimg/val'
@@ -66,9 +72,7 @@ test_set = test_datagen.flow_from_directory(test_dir,
                                             batch_size = 32,
                                             class_mode = 'categorical')
 
-from PIL import _imaging
-from PIL import Image
-import PIL
+
 # Run the cell. It will take some time to execute
 r = Classifier.fit_generator(
   training_set,
@@ -95,7 +99,7 @@ plt.legend()
 plt.show()
 plt.savefig('AccVal_acc')
 
-from tensorflow.keras.models import load_model
+
 
 Classifier.save('model_Classifier1.h5')
 
@@ -108,8 +112,7 @@ y_pred = np.argmax(y_pred, axis=1)
 
 y_pred
 
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing import image
+
 
 model=load_model('model_Classifier1.h5')
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-        @script-author: Srija srinivasan, Vikram Shakthi, Rakshith RP
-	    @script-description: Python code to build classification models to predict fake and real currency.   
+        @script-author: Srija Srinivasan, Vikram Shakthi, Rakshith RP
+	@script-description: Python code to build classification models to predict fake and real currency.   
     	@script-details: Written in Google Colaboratory.
             
 """Notes Classification
